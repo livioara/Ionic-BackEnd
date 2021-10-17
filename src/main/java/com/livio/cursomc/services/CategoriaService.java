@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.livio.cursomc.domain.Categoria;
 import com.livio.cursomc.repositories.CategoriaRepository;
+import com.livio.cursomc.services.exceptions.ObjectNotFoundException;
+
+import net.bytebuddy.asm.Advice.Return;
 
 @Service
 public class CategoriaService {
@@ -16,10 +19,12 @@ public class CategoriaService {
 
 	public Categoria buscar(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 		
 		
 	}
 
+	
 }
 
