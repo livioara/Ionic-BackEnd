@@ -2,16 +2,14 @@ package com.livio.cursomc.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 
@@ -25,7 +23,7 @@ public class Categoria implements Serializable {
 	private String nome;
 	
 	
-	@JsonManagedReference
+	
 	
 	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos = new ArrayList<>();
