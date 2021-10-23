@@ -9,8 +9,6 @@ import com.livio.cursomc.domain.Categoria;
 import com.livio.cursomc.repositories.CategoriaRepository;
 import com.livio.cursomc.services.exceptions.ObjectNotFoundException;
 
-import net.bytebuddy.asm.Advice.Return;
-
 @Service
 public class CategoriaService {
 
